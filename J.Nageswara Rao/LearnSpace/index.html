@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnSpace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../km-theme.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">🎓 LearnSpace</div>
+
+        <div class="search">
+            <input id="searchInput" type="text" placeholder="Search courses...">
+            <button id="searchBtn">🔍</button>
+        </div>
+
+        <div class="actions">
+            <button id="themeBtn">🌙</button>
+            <button id="profileBtn">👤</button>
+        </div>
+    </header>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <button class="menu active" data-section="home">🏠 Home</button>
+            <button class="menu" data-section="courses">📚 My Courses</button>
+            <button class="menu" data-section="progress">📊 Progress</button>
+            <button class="menu" data-section="achievements">🏆 Achievements</button>
+        </aside>
+
+        <main>
+
+            <section class="welcome">
+                <div>
+                    <span class="tag">YOUR LEARNING JOURNEY</span>
+                    <h1>Learn something<br><span>new today.</span></h1>
+                    <p>Build skills, complete courses and grow every day.</p>
+                    <button id="exploreBtn">Explore Courses →</button>
+                </div>
+
+                <div class="welcome-art">
+                    <div class="circle">🎓</div>
+                    <div class="float one">📚</div>
+                    <div class="float two">💡</div>
+                    <div class="float three">🚀</div>
+                </div>
+            </section>
+
+            <section class="stats">
+                <div class="stat">
+                    <span>📚</span>
+                    <div>
+                        <strong>12</strong>
+                        <small>Courses</small>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span>⏱️</span>
+                    <div>
+                        <strong>36h</strong>
+                        <small>Learning Time</small>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span>🔥</span>
+                    <div>
+                        <strong>7</strong>
+                        <small>Day Streak</small>
+                    </div>
+                </div>
+
+                <div class="stat">
+                    <span>🏆</span>
+                    <div>
+                        <strong>8</strong>
+                        <small>Certificates</small>
+                    </div>
+                </div>
+            </section>
+
+            <section id="courseSection">
+
+                <div class="section-title">
+                    <div>
+                        <h2>Popular Courses</h2>
+                        <p id="courseResult">Explore courses made for you.</p>
+                    </div>
+
+                    <select id="categorySelect">
+                    <option value="all">All Categories</option>
+                    <option value="development">Development</option>
+                    <option value="design">Design</option>
+                    <option value="data">Data</option>
+                    <option value="business">Business</option>
+                </select>
+                </div>
+
+                <div id="courseGrid" class="course-grid"></div>
+
+            </section>
+
+            <section class="continue">
+                <div>
+                    <span class="tag">CONTINUE LEARNING</span>
+                    <h2>JavaScript Mastery</h2>
+                    <p>You're 68% through this course.</p>
+
+                    <div class="progress">
+                        <div id="progressBar"></div>
+                    </div>
+
+                    <button id="continueBtn">▶ Continue Lesson</button>
+                </div>
+
+                <div class="lesson">
+                    <div>⚡</div>
+                    <strong>Lesson 14</strong>
+                    <small>DOM Events</small>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- COURSE MODAL -->
+
+    <div id="courseModal" class="modal">
+        <div class="modal-box">
+            <button id="closeModal">×</button>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- PROFILE MODAL -->
+
+    <div id="profileModal" class="modal">
+        <div class="modal-box profile-box">
+            <button id="closeProfile">×</button>
+            <div class="profile-icon">👨‍🎓</div>
+            <h2>Student Profile</h2>
+            <p>Keep learning and achieve your goals!</p>
+
+            <div class="profile-stat">
+                <strong>12</strong>
+                <span>Courses Enrolled</span>
+            </div>
+
+            <div class="profile-stat">
+                <strong>8</strong>
+                <span>Certificates</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+

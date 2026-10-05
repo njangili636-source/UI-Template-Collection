@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #182230;
+    transition: 0.3s;
+}
+
+.navbar {
+    height: 72px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    border-bottom: 1px solid #e8ebf2;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.search {
+    display: flex;
+    width: 380px;
+}
+
+.search input {
+    flex: 1;
+    padding: 13px 16px;
+    border: 1px solid #ddd;
+    border-radius: 12px 0 0 12px;
+    outline: none;
+}
+
+.search button {
+    border: none;
+    padding: 0 18px;
+    background: #6c5ce7;
+    color: white;
+    border-radius: 0 12px 12px 0;
+    cursor: pointer;
+}
+
+.actions button {
+    border: none;
+    background: #f1f2f7;
+    padding: 11px;
+    margin-left: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.layout {
+    display: flex;
+    min-height: calc(100vh - 72px);
+}
+
+.sidebar {
+    width: 220px;
+    background: white;
+    padding: 25px 15px;
+    border-right: 1px solid #e8ebf2;
+}
+
+.menu {
+    width: 100%;
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding: 14px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.menu:hover,
+.menu.active {
+    background: #eeeaff;
+    color: #604bd8;
+}
+
+main {
+    flex: 1;
+    padding: 35px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.welcome {
+    background: linear-gradient(120deg, #6254e7, #8d7cf0);
+    border-radius: 25px;
+    padding: 45px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    opacity: .8;
+}
+
+.welcome h1 {
+    font-size: 45px;
+    line-height: 1.1;
+    margin: 12px 0;
+}
+
+.welcome h1 span {
+    color: #dcd7ff;
+}
+
+.welcome p {
+    margin-bottom: 25px;
+}
+
+.welcome button,
+.continue button {
+    border: none;
+    padding: 13px 22px;
+    border-radius: 10px;
+    background: white;
+    color: #5948d2;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.welcome-art {
+    position: relative;
+    width: 300px;
+}
+
+.circle {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 75px;
+    margin: 25px auto;
+}
+
+.float {
+    position: absolute;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+.one {
+    top: 15px;
+    left: 5px;
+}
+
+.two {
+    top: 120px;
+    right: 0;
+}
+
+.three {
+    bottom: 10px;
+    left: 40px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    margin: 25px 0;
+}
+
+.stat {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.stat>span {
+    font-size: 28px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 22px;
+}
+
+.stat small {
+    color: #777;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    margin-bottom: 5px;
+}
+
+.section-title p {
+    color: #777;
+}
+
+select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.course {
+    background: white;
+    border-radius: 17px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: .25s;
+}
+
+.course:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, .08);
+}
+
+.course-image {
+    height: 130px;
+    background: #eeeaff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 55px;
+}
+
+.course-info {
+    padding: 17px;
+}
+
+.course-info small {
+    color: #6c5ce7;
+    font-weight: bold;
+}
+
+.course-info h3 {
+    margin: 8px 0;
+}
+
+.course-info p {
+    color: #777;
+    font-size: 13px;
+}
+
+.course-info button {
+    width: 100%;
+    margin-top: 15px;
+    border: none;
+    background: #6c5ce7;
+    color: white;
+    padding: 11px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.continue {
+    margin-top: 30px;
+    background: #172033;
+    color: white;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.continue h2 {
+    margin: 10px 0;
+}
+
+.continue p {
+    color: #b8bfcc;
+}
+
+.progress {
+    width: 350px;
+    height: 8px;
+    background: #394357;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+#progressBar {
+    width: 68%;
+    height: 100%;
+    background: #8f82ff;
+    border-radius: 10px;
+}
+
+.lesson {
+    width: 180px;
+    background: #293348;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.lesson div {
+    font-size: 40px;
+}
+
+.lesson small {
+    color: #aeb6c7;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 50;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-box {
+    background: white;
+    width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.modal-box button#closeModal,
+.modal-box button#closeProfile {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-icon {
+    font-size: 70px;
+    margin: 15px;
+}
+
+.modal-box h2 {
+    margin: 10px 0;
+}
+
+.modal-box p {
+    color: #777;
+    margin: 15px 0;
+}
+
+.modal-start {
+    border: none;
+    background: #6c5ce7;
+    color: white;
+    padding: 13px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.profile-icon {
+    font-size: 70px;
+}
+
+.profile-stat {
+    display: inline-flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 15px;
+    background: #f1efff;
+    border-radius: 12px;
+}
+
+.profile-stat strong {
+    font-size: 24px;
+    color: #6c5ce7;
+}
+
+#toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #172033;
+    color: white;
+    padding: 14px 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: .3s;
+    z-index: 100;
+}
+
+#toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* DARK MODE */
+
+body.dark {
+    background: #101522;
+    color: white;
+}
+
+body.dark .navbar,
+body.dark .sidebar,
+body.dark .stat,
+body.dark .course,
+body.dark .modal-box {
+    background: #1b2333;
+    color: white;
+}
+
+body.dark .search input,
+body.dark select {
+    background: #242d40;
+    color: white;
+    border-color: #394357;
+}
+
+body.dark .section-title p,
+body.dark .stat small,
+body.dark .course-info p {
+    color: #aeb6c7;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1000px) {
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .sidebar {
+        width: 180px;
+    }
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 10px;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .search {
+        order: 3;
+        width: 100%;
+    }
+    .layout {
+        display: block;
+    }
+    .sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+    }
+    .menu {
+        min-width: 130px;
+    }
+    main {
+        padding: 15px;
+    }
+    .welcome {
+        padding: 25px;
+    }
+    .welcome h1 {
+        font-size: 32px;
+    }
+    .welcome-art {
+        display: none;
+    }
+    .stats,
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+    .continue {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .progress {
+        width: 100%;
+    }
+}

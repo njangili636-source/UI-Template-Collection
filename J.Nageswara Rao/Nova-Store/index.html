@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Store</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../km-theme.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>✦</span> Nova Store
+        </div>
+
+        <div class="search-box">
+            <input id="searchInput" type="text" placeholder="Search products...">
+            <button id="searchBtn">🔍</button>
+        </div>
+
+        <div class="nav-actions">
+            <button id="themeBtn">🌙</button>
+            <button id="wishlistBtn">♡ <span id="wishCount">0</span></button>
+            <button id="cartBtn">🛒 <span id="cartCount">0</span></button>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="badge">NEW COLLECTION 2026</span>
+
+                <h1>
+                    Everything you want.<br>
+                    <span>One beautiful store.</span>
+                </h1>
+
+                <p>
+                    Discover carefully selected products designed for modern living.
+                </p>
+
+                <button id="shopBtn" class="primary-btn">
+                Shop Collection →
+            </button>
+
+            </div>
+
+            <div class="hero-art">
+                <div class="floating-card card-one">🎧</div>
+                <div class="floating-card card-two">⌚</div>
+                <div class="floating-card card-three">📱</div>
+                <div class="hero-circle">✦</div>
+            </div>
+
+        </section>
+
+
+        <section class="categories">
+
+            <div>
+                <h2>Explore Categories</h2>
+                <p>Find something you'll love.</p>
+            </div>
+
+            <div class="category-list">
+
+                <button class="category active" data-category="all">
+                ✨ All
+            </button>
+
+                <button class="category" data-category="electronics">
+                💻 Electronics
+            </button>
+
+                <button class="category" data-category="fashion">
+                👟 Fashion
+            </button>
+
+                <button class="category" data-category="home">
+                🏠 Home
+            </button>
+
+                <button class="category" data-category="beauty">
+                💄 Beauty
+            </button>
+
+            </div>
+
+        </section>
+
+
+        <section class="products-section" id="productsSection">
+
+            <div class="section-heading">
+
+                <div>
+                    <h2>Trending Products</h2>
+                    <p id="resultText">Showing all products</p>
+                </div>
+
+                <select id="sortSelect">
+                <option value="default">Sort by</option>
+                <option value="low">Price: Low to High</option>
+                <option value="high">Price: High to Low</option>
+                <option value="rating">Top Rated</option>
+            </select>
+
+            </div>
+
+            <div id="productGrid" class="product-grid"></div>
+
+            <div id="noProducts" class="no-products">
+                No products found.
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- WISHLIST -->
+
+    <div id="wishlistPanel" class="side-panel">
+
+        <div class="panel-header">
+            <h2>Wishlist ❤️</h2>
+            <button id="closeWishlist">×</button>
+        </div>
+
+        <div id="wishlistItems"></div>
+
+    </div>
+
+
+    <!-- PRODUCT MODAL -->
+
+    <div id="productModal" class="modal">
+
+        <div class="modal-content">
+
+            <button id="closeModal" class="modal-close">×</button>
+
+            <div id="modalBody"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div id="toast" class="toast"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

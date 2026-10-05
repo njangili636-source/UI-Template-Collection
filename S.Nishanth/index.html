@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Nishanth Applications</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial
+        }
+        
+        body {
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            color: #172033
+        }
+        
+        header {
+            text-align: center;
+            padding: 55px 20px 30px
+        }
+        
+        h1 {
+            font-size: 42px;
+            margin-bottom: 10px
+        }
+        
+        header p {
+            color: #64748b
+        }
+        
+        .apps {
+            max-width: 1100px;
+            margin: 20px auto 50px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px
+        }
+        
+        .app {
+            background: white;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 12px 35px #17203318;
+            border-top: 5px solid var(--c)
+        }
+        
+        .app h2 {
+            margin: 10px 0
+        }
+        
+        .app p {
+            color: #64748b;
+            line-height: 1.6
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--c);
+            color: white;
+            text-decoration: none;
+            padding: 12px 18px;
+            border-radius: 10px;
+            margin-top: 18px;
+            font-weight: bold
+        }
+        
+        .icon {
+            font-size: 45px
+        }
+        
+        @media(max-width:700px) {
+            .apps {
+                grid-template-columns: 1fr
+            }
+            h1 {
+                font-size: 32px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Nishanth Applications</h1>
+        <p>Four complete web applications</p>
+    </header>
+    <section class="apps">
+        <div class="app" style="--c:#0f9d8a">
+            <div class="icon">🏥</div>
+            <h2>MediCare</h2>
+            <p>Doctors, appointments, medicines and patient profile.</p><a class="btn" href="MediCare/index.html">Open App</a></div>
+        <div class="app" style="--c:#6558d3">
+            <div class="icon">💰</div>
+            <h2>FinVault</h2>
+            <p>Transactions, budgets, savings goals and profile.</p><a class="btn" href="FinVault/index.html">Open App</a></div>
+        <div class="app" style="--c:#df2772">
+            <div class="icon">🎬</div>
+            <h2>CineVerse</h2>
+            <p>Movies, trending titles, watchlist and profile.</p><a class="btn" href="CineVerse/index.html">Open App</a></div>
+        <div class="app" style="--c:#d35400">
+            <div class="icon">🏠</div>
+            <h2>HomeCraft</h2>
+            <p>Products, decor, cart and order tracking.</p><a class="btn" href="HomeCraft/index.html">Open App</a></div>
+    </section>
+</body>
+
+</html>

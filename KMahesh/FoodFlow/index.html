@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>FoodFlow — Food Delivery</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brandmark">●</span><span>FoodFlow</span></div>
+  <button class="location" id="locationBtn">📍 <span id="locationText">Sai University, Chennai</span>⌄</button>
+  <div class="search"><span>⌕</span><input id="searchInput" placeholder="Search for restaurants, dishes or cuisines"></div>
+  <nav><button id="offersBtn">🏷 Offers</button><button id="ordersBtn">▣ Orders</button><button id="favBtn">♡ Favorites</button><button class="cartBtn" id="cartBtn">🛒 Cart <b id="cartCount">0</b></button></nav>
+</header>
+<main>
+<section class="hero"><div><p class="eyebrow">FOOD DELIVERY</p><h1>Craving something<br><span>delicious?</span></h1><p class="sub">Discover restaurants near you, explore menus and order your favourites.</p><div class="heroActions"><button class="primary" id="exploreBtn">Explore restaurants</button><button class="ghost" id="offersHero">View offers</button></div></div><div class="heroCard"><div class="heroPlate">🍛</div><div><strong>Fast delivery</strong><small>Fresh food at your door</small></div><span>20–35 min</span></div></section>
+<section class="categories"><div class="sectionHead"><h2>What are you craving?</h2><button id="clearFilters">Clear filters</button></div><div class="chips" id="categoryChips"></div></section>
+<section id="restaurantsSection"><div class="sectionHead"><div><p class="eyebrow">DISCOVER</p><h2>Restaurants near you</h2></div><select id="sortSelect"><option value="rating">Top rated</option><option value="delivery">Fast delivery</option><option value="priceLow">Price: low to high</option></select></div><div class="restaurantGrid" id="restaurantGrid"></div></section>
+<section class="offersStrip"><div><b>FLAT ₹150 OFF</b><span>on your first FoodFlow order</span></div><button id="claimOffer">Claim offer</button></section>
+<section id="menuSection" class="hidden"><button class="back" id="backRestaurants">← All restaurants</button><div id="restaurantDetail"></div><div class="menuLayout"><aside id="menuCategories"></aside><div class="menuItems" id="menuItems"></div></div></section>
+<section id="ordersSection" class="hidden"><div class="sectionHead"><div><p class="eyebrow">YOUR ACTIVITY</p><h2>Recent orders</h2></div><button id="backFromOrders">← Restaurants</button></div><div id="ordersList"></div></section>
+</main>
+<div class="drawer" id="cartDrawer"><div class="drawerPanel"><div class="drawerHead"><div><p class="eyebrow">YOUR ORDER</p><h2>Cart</h2></div><button id="closeCart">×</button></div><div id="cartItems"></div><div class="bill" id="bill"></div><button class="checkout primary" id="checkoutBtn">Proceed to checkout</button></div></div>
+<div class="modal" id="itemModal"><div class="modalBox"><button class="close" id="closeModal">×</button><img id="modalImg"><div class="modalContent"><p class="eyebrow" id="modalRestaurant"></p><h2 id="modalName"></h2><p id="modalDesc"></p><div class="customRow"><span>Quantity</span><div class="qty"><button id="modalMinus">−</button><b id="modalQty">1</b><button id="modalPlus">+</button></div></div><div class="customRow"><span>Extra cheese</span><label class="switch"><input type="checkbox" id="extraCheese"><i></i></label></div><div class="modalBottom"><strong id="modalPrice"></strong><button class="primary" id="addModal">Add to cart</button></div></div></div></div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body></html>

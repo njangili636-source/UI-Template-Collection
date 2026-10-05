@@ -1,0 +1,6 @@
+*{box-sizing:border-box;margin:0}body{background:#f4f0fa;color:#241838;font-family:"Trebuchet MS",sans-serif;padding:24px}
+header,main{max-width:1000px;margin:auto}header a{color:#5b3f8c;font-size:.9rem}h1{font-size:3rem;margin:4px 0 12px;color:#5b3f8c}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}nav button{border:2px solid #5b3f8c;background:none;color:#5b3f8c;padding:6px 16px;border-radius:99px;cursor:pointer;font:inherit}nav .on{background:#5b3f8c;color:#fff}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.art{height:220px;border:0;border-radius:12px;cursor:pointer;display:flex;align-items:flex-end;padding:12px;color:#fff;font:600 1rem "Trebuchet MS",sans-serif;text-align:left;text-shadow:0 1px 4px #0008}.art:hover,.art:focus-visible{outline:3px solid #241838}
+dialog{border:0;border-radius:14px;padding:16px;max-width:92vw;width:520px}dialog::backdrop{background:#241838cc}#big{height:min(60vh,380px);border-radius:10px}#cap{margin:12px 0}#x{padding:8px 18px;background:#5b3f8c;color:#fff;border:0;border-radius:8px;cursor:pointer}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealMate - Smart Meal Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">🍳 MealMate</div>
+
+        <div class="nav-actions">
+            <button id="favoritesBtn">❤️ Favorites</button>
+            <button id="themeBtn">🌙 Dark</button>
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <div>
+                <span class="badge">SMART MEAL PLANNER</span>
+
+                <h1>What's in your<br>kitchen today?</h1>
+
+                <p>
+                    Select ingredients you have and MealMate suggests a simple meal with cooking instructions.
+                </p>
+
+                <button id="startBtn" class="primary-btn">
+                🍽️ Find a Meal
+            </button>
+            </div>
+
+            <div class="hero-icon">🥗</div>
+
+        </section>
+
+
+        <!-- INGREDIENT SELECTOR -->
+
+        <section class="planner" id="planner">
+
+            <div class="section-heading">
+                <span class="mini-label">STEP 1</span>
+                <h2>Choose your ingredients</h2>
+                <p>Select what you already have at home.</p>
+            </div>
+
+
+            <div class="ingredients-grid">
+
+                <button class="ingredient" data-name="Rice">
+                🍚 <span>Rice</span>
+            </button>
+
+                <button class="ingredient" data-name="Egg">
+                🥚 <span>Egg</span>
+            </button>
+
+                <button class="ingredient" data-name="Chicken">
+                🍗 <span>Chicken</span>
+            </button>
+
+                <button class="ingredient" data-name="Tomato">
+                🍅 <span>Tomato</span>
+            </button>
+
+                <button class="ingredient" data-name="Potato">
+                🥔 <span>Potato</span>
+            </button>
+
+                <button class="ingredient" data-name="Onion">
+                🧅 <span>Onion</span>
+            </button>
+
+                <button class="ingredient" data-name="Bread">
+                🍞 <span>Bread</span>
+            </button>
+
+                <button class="ingredient" data-name="Cheese">
+                🧀 <span>Cheese</span>
+            </button>
+
+                <button class="ingredient" data-name="Paneer">
+                🧈 <span>Paneer</span>
+            </button>
+
+                <button class="ingredient" data-name="Vegetables">
+                🥦 <span>Vegetables</span>
+            </button>
+
+            </div>
+
+
+            <div class="selected-box">
+
+                <strong>Selected:</strong>
+
+                <span id="selectedText">
+                No ingredients selected
+            </span>
+
+            </div>
+
+
+            <div class="meal-type">
+
+                <label>🍽️ What do you want?</label>
+
+                <select id="mealType">
+
+                <option value="">
+                    Choose meal type
+                </option>
+
+                <option value="Breakfast">
+                    Breakfast
+                </option>
+
+                <option value="Lunch">
+                    Lunch
+                </option>
+
+                <option value="Dinner">
+                    Dinner
+                </option>
+
+                <option value="Snack">
+                    Snack
+                </option>
+
+            </select>
+
+            </div>
+
+
+            <button id="generateBtn" class="generate-btn">
+            ✨ Find My Meal
+        </button>
+
+        </section>
+
+
+        <!-- RESULT -->
+
+        <section id="resultSection" class="result hidden">
+
+            <div class="result-header">
+
+                <div>
+                    <span class="mini-label">
+                    MEAL SUGGESTION
+                </span>
+
+                    <h2 id="mealTitle">
+                        Your Meal
+                    </h2>
+
+                    <p id="mealDescription"></p>
+                </div>
+
+                <button id="favoriteBtn" class="heart-btn">
+                ♡
+            </button>
+
+            </div>
+
+
+            <div class="result-info">
+
+                <div>
+                    <span>⏱️ Time</span>
+                    <strong id="cookTime">20 min</strong>
+                </div>
+
+                <div>
+                    <span>🔥 Difficulty</span>
+                    <strong id="difficulty">Easy</strong>
+                </div>
+
+                <div>
+                    <span>🍽️ Type</span>
+                    <strong id="resultType">Lunch</strong>
+                </div>
+
+            </div>
+
+
+            <div class="recipe-grid">
+
+                <div class="recipe-card">
+
+                    <h3>🛒 Ingredients</h3>
+
+                    <ul id="recipeIngredients"></ul>
+
+                </div>
+
+
+                <div class="recipe-card">
+
+                    <h3>👨‍🍳 Cooking Steps</h3>
+
+                    <ol id="recipeSteps"></ol>
+
+                </div>
+
+            </div>
+
+
+            <button id="newMealBtn" class="secondary-btn">
+            🔄 Choose Another Meal
+        </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- FAVORITES -->
+
+    <div id="favoritesModal" class="modal hidden">
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+
+                <h2>❤️ Favorite Meals</h2>
+
+                <button id="closeFavorites">
+                ✕
+            </button>
+
+            </div>
+
+            <div id="favoritesList"></div>
+
+        </div>
+
+    </div>
+
+
+    <div id="toast"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

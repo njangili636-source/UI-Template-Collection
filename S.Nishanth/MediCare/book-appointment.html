@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediCare - Book Appointment</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav">
+<div class="logo">🏥 MediCare</div>
+<div class="navlinks">
+<a href="index.html">📊 Dashboard</a>
+<a href="doctors.html">👨‍⚕️ Doctors</a>
+<a href="appointments.html">📅 Appointments</a>
+<a href="medicines.html">💊 Medicines</a>
+<a href="profile.html">👤 My Profile</a>
+<a href="../index.html">🏠 Main</a>
+</div>
+</nav>
+<main class="container">
+<section class="hero">
+<h1>Book an Appointment</h1>
+<p>Select a doctor, date and time.</p>
+</section>
+<div class="form">
+<label>Doctor</label>
+<select id="doctor">
+<option>Dr. Priya Sharma - Cardiologist</option>
+<option>Dr. Arun Kumar - General Physician</option>
+<option>Dr. Meena Rao - Dermatologist</option>
+<option>Dr. Rahul Singh - Orthopedic</option>
+</select>
+
+<label>Date</label>
+<input id="date" type="date">
+
+<label>Time</label>
+<select id="time">
+<option>10:00 AM</option>
+<option>10:30 AM</option>
+<option>11:00 AM</option>
+<option>2:00 PM</option>
+<option>4:30 PM</option>
+</select>
+
+<button class="btn" onclick="bookAppointment()">Confirm Appointment</button>
+<div id="notice" class="notice"></div>
+</div>
+</main>
+<footer>MediCare • Member-3</footer>
+<script>
+function bookAppointment(){
+  const doctor=document.getElementById("doctor").value;
+  const date=document.getElementById("date").value;
+  const time=document.getElementById("time").value;
+  const notice=document.getElementById("notice");
+  if(!date){
+    notice.textContent="Please select an appointment date.";
+    notice.style.display="block";
+    return;
+  }
+  notice.textContent="Appointment booked with "+doctor+" on "+date+" at "+time+".";
+  notice.style.display="block";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PackSmart - Smart Packing Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">🧳 PackSmart</div>
+
+        <div class="nav-actions">
+            <button id="savedBtn">❤️ Saved</button>
+            <button id="themeBtn">🌙 Dark</button>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div>
+                <span class="badge">SMART TRIP PLANNER</span>
+
+                <h1>Pack Less.<br>Travel Smarter.</h1>
+
+                <p>
+                    Tell us about your trip and PackSmart creates a personalized packing checklist for you.
+                </p>
+
+                <button id="startBtn" class="primary-btn">
+                ✨ Create Packing List
+            </button>
+            </div>
+
+            <div class="hero-icon">🧳</div>
+        </section>
+
+
+        <!-- TRIP DETAILS -->
+
+        <section class="planner-card" id="planner">
+
+            <div class="section-heading">
+                <span class="mini-label">STEP 1</span>
+                <h2>Tell us about your trip</h2>
+                <p>Choose your travel details below.</p>
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="field">
+                    <label>📍 Destination</label>
+
+                    <select id="destination">
+                    <option value="">Choose destination</option>
+                    <option value="Beach">🏖️ Beach</option>
+                    <option value="Mountain">🏔️ Mountain</option>
+                    <option value="City">🏙️ City</option>
+                    <option value="Countryside">🌳 Countryside</option>
+                </select>
+                </div>
+
+
+                <div class="field">
+                    <label>📅 Trip Duration</label>
+
+                    <select id="days">
+                    <option value="">Choose days</option>
+                    <option value="1">1 Day</option>
+                    <option value="3">3 Days</option>
+                    <option value="5">5 Days</option>
+                    <option value="7">7 Days</option>
+                    <option value="10">10 Days</option>
+                </select>
+                </div>
+
+
+                <div class="field">
+                    <label>🌤️ Weather</label>
+
+                    <select id="weather">
+                    <option value="">Choose weather</option>
+                    <option value="Hot">☀️ Hot</option>
+                    <option value="Cold">❄️ Cold</option>
+                    <option value="Rainy">🌧️ Rainy</option>
+                    <option value="Mixed">🌦️ Mixed</option>
+                </select>
+                </div>
+
+
+                <div class="field">
+                    <label>🎯 Main Activity</label>
+
+                    <select id="activity">
+                    <option value="">Choose activity</option>
+                    <option value="Relaxing">😌 Relaxing</option>
+                    <option value="Adventure">🥾 Adventure</option>
+                    <option value="Business">💼 Business</option>
+                    <option value="Photography">📸 Photography</option>
+                    <option value="Family">👨‍👩‍👧 Family</option>
+                </select>
+                </div>
+
+            </div>
+
+
+            <button id="generateBtn" class="generate-btn">
+            🪄 Generate My Packing List
+        </button>
+
+        </section>
+
+
+        <!-- PACKING RESULT -->
+
+        <section id="resultSection" class="result-section hidden">
+
+            <div class="result-top">
+
+                <div>
+                    <span class="mini-label">YOUR PACKING PLAN</span>
+
+                    <h2 id="resultTitle">
+                        Your Trip
+                    </h2>
+
+                    <p id="tripSummary"></p>
+                </div>
+
+                <div class="progress-card">
+
+                    <div class="progress-number" id="progressNumber">
+                        0%
+                    </div>
+
+                    <span>Packed</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress-bar">
+                <div id="progressBar"></div>
+            </div>
+
+
+            <div class="packing-layout">
+
+                <div class="packing-card">
+
+                    <div class="card-title">
+                        <h3>👕 Clothing</h3>
+                        <span id="clothingCount">0</span>
+                    </div>
+
+                    <div id="clothingList"></div>
+
+                </div>
+
+
+                <div class="packing-card">
+
+                    <div class="card-title">
+                        <h3>🎒 Essentials</h3>
+                        <span id="essentialCount">0</span>
+                    </div>
+
+                    <div id="essentialList"></div>
+
+                </div>
+
+
+                <div class="packing-card">
+
+                    <div class="card-title">
+                        <h3>🎯 Trip Specific</h3>
+                        <span id="activityCount">0</span>
+                    </div>
+
+                    <div id="activityList"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="bottom-actions">
+
+                <button id="saveBtn" class="primary-btn">
+                ❤️ Save List
+            </button>
+
+                <button id="resetBtn" class="secondary-btn">
+                🔄 New Trip
+            </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- SAVED LIST MODAL -->
+
+    <div id="savedModal" class="modal hidden">
+
+        <div class="modal-card">
+
+            <div class="modal-header">
+                <h2>❤️ Saved Packing Lists</h2>
+
+                <button id="closeSavedBtn">✕</button>
+            </div>
+
+            <div id="savedList"></div>
+
+        </div>
+
+    </div>
+
+
+    <div id="toast"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

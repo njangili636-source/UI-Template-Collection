@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InsightBoard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../km-theme.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="brand">
+            <div class="brand-icon">◈</div>
+
+            <div>
+                <strong>InsightBoard</strong>
+                <small>Analytics Studio</small>
+            </div>
+        </div>
+
+        <div class="header-actions">
+            <button id="notificationBtn">
+            🔔 <span id="notificationCount">3</span>
+        </button>
+
+            <button id="themeBtn">🌙</button>
+
+            <button id="profileBtn">👤</button>
+        </div>
+
+    </header>
+
+
+    <div class="layout">
+
+        <aside class="sidebar">
+
+            <button class="nav-btn active" data-page="overview">
+            📊 Overview
+        </button>
+
+            <button class="nav-btn" data-page="analytics">
+            📈 Analytics
+        </button>
+
+            <button class="nav-btn" data-page="customers">
+            👥 Customers
+        </button>
+
+            <button class="nav-btn" data-page="reports">
+            📄 Reports
+        </button>
+
+            <button class="nav-btn" data-page="settings">
+            ⚙️ Settings
+        </button>
+
+        </aside>
+
+
+        <main>
+
+            <section class="top-section">
+
+                <div>
+                    <span class="eyebrow">
+                    BUSINESS OVERVIEW
+                </span>
+
+                    <h1>Good afternoon 👋</h1>
+
+                    <p>
+                        Here's what's happening with your business today.
+                    </p>
+                </div>
+
+                <div class="controls">
+
+                    <select id="periodSelect">
+                    <option value="7">Last 7 Days</option>
+                    <option value="30">Last 30 Days</option>
+                    <option value="90">Last 90 Days</option>
+                </select>
+
+                    <button id="exportBtn" class="export-btn">
+                    ↓ Export
+                </button>
+
+                </div>
+
+            </section>
+
+
+            <section class="kpi-grid">
+
+                <div class="kpi-card">
+
+                    <div class="kpi-top">
+                        <span>Total Revenue</span>
+                        <div class="kpi-icon">💰</div>
+                    </div>
+
+                    <h2 id="revenueValue">₹84,250</h2>
+
+                    <p class="positive">
+                        ↑ 18.4%
+                        <span>vs last period</span>
+                    </p>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-top">
+                        <span>Total Users</span>
+                        <div class="kpi-icon">👥</div>
+                    </div>
+
+                    <h2 id="usersValue">12,480</h2>
+
+                    <p class="positive">
+                        ↑ 12.8%
+                        <span>vs last period</span>
+                    </p>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-top">
+                        <span>Conversion Rate</span>
+                        <div class="kpi-icon">🎯</div>
+                    </div>
+
+                    <h2>7.82%</h2>
+
+                    <p class="positive">
+                        ↑ 4.6%
+                        <span>vs last period</span>
+                    </p>
+
+                </div>
+
+
+                <div class="kpi-card">
+
+                    <div class="kpi-top">
+                        <span>Orders</span>
+                        <div class="kpi-icon">🛒</div>
+                    </div>
+
+                    <h2 id="ordersValue">2,846</h2>
+
+                    <p class="negative">
+                        ↓ 2.1%
+                        <span>vs last period</span>
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <section class="chart-grid">
+
+                <div class="panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2>Revenue Overview</h2>
+                            <p>Revenue performance over time</p>
+                        </div>
+
+                        <span class="live">● LIVE</span>
+
+                    </div>
+
+
+                    <div class="chart">
+
+                        <div class="y-labels">
+                            <span>₹20k</span>
+                            <span>₹15k</span>
+                            <span>₹10k</span>
+                            <span>₹5k</span>
+                            <span>₹0</span>
+                        </div>
+
+
+                        <div class="bars">
+
+                            <div class="bar-wrap">
+                                <div class="bar" style="height:45%"></div>
+                                <small>Mon</small>
+                            </div>
+
+                            <div class="bar-wrap">
+                                <div class="bar" style="height:60%"></div>
+                                <small>Tue</small>
+                            </div>
+
+                            <div class="bar-wrap">
+                                <div class="bar" style="height:52%"></div>
+                                <small>Wed</small>
+                            </div>
+
+                            <div class="bar-wrap">
+                                <div class="bar" style="height:75%"></div>
+                                <small>Thu</small>
+                            </div>
+
+                            <div class="bar-wrap">
+                                <div class="bar" style="height:68%"></div>
+                                <small>Fri</small>
+                            </div>
+
+                            <div class="bar-wrap">
+                                <div class="bar" style="height:88%"></div>
+                                <small>Sat</small>
+                            </div>
+
+                            <div class="bar-wrap">
+                                <div class="bar" style="height:78%"></div>
+                                <small>Sun</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2>Traffic Sources</h2>
+                            <p>Where users come from</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="donut">
+
+                        <div>
+                            <strong>12.4K</strong>
+                            <span>Visitors</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="source-list">
+
+                        <div>
+                            <span>🔵 Direct</span>
+                            <strong>42%</strong>
+                        </div>
+
+                        <div>
+                            <span>🟣 Search</span>
+                            <strong>31%</strong>
+                        </div>
+
+                        <div>
+                            <span>🟡 Social</span>
+                            <strong>18%</strong>
+                        </div>
+
+                        <div>
+                            <span>⚪ Referral</span>
+                            <strong>9%</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="bottom-grid">
+
+                <div class="panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2>Recent Customers</h2>
+                            <p>Latest customer activity</p>
+                        </div>
+
+                        <button id="viewAllBtn" class="link-btn">
+                        View All →
+                    </button>
+
+                    </div>
+
+
+                    <div class="table-wrap">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>Customer</th>
+                                    <th>Product</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="customerTable">
+
+                                <tr>
+                                    <td>👩 Ananya Sharma</td>
+                                    <td>Pro Plan</td>
+                                    <td>₹2,499</td>
+                                    <td>
+                                        <span class="status success">
+                                        Completed
+                                    </span>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>👨 Rahul Kumar</td>
+                                    <td>Business Plan</td>
+                                    <td>₹4,999</td>
+                                    <td>
+                                        <span class="status success">
+                                        Completed
+                                    </span>
+                                    </td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>👩 Priya Reddy</td>
+                                    <td>Starter Plan</td>
+                                    <td>₹999</td>
+                                    <td>
+                                        <span class="status pending">
+                                        Pending
+                                    </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <div class="panel performance">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h2>Performance</h2>
+                            <p>Monthly target</p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="performance-circle">
+
+                        <strong>82%</strong>
+                        <span>Target</span>
+
+                    </div>
+
+
+                    <h3>Great progress!</h3>
+
+                    <p>
+                        You're on track to reach your monthly target.
+                    </p>
+
+
+                    <button id="detailsBtn">
+                    View Details
+                </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <div id="notificationPanel" class="popup">
+
+        <div class="popup-box">
+
+            <button class="close-btn" id="closeNotification">
+            ×
+        </button>
+
+            <h2>🔔 Notifications</h2>
+
+            <div class="notification">
+                <strong>New customer</strong>
+                <p>Ananya joined your Pro Plan.</p>
+            </div>
+
+            <div class="notification">
+                <strong>Revenue milestone</strong>
+                <p>You crossed ₹80,000 this month.</p>
+            </div>
+
+            <div class="notification">
+                <strong>Weekly report</strong>
+                <p>Your analytics report is ready.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="profilePanel" class="popup">
+
+        <div class="popup-box profile">
+
+            <button class="close-btn" id="closeProfile">
+            ×
+        </button>
+
+            <div class="avatar">👨‍💼</div>
+
+            <h2>Alex Morgan</h2>
+
+            <p>Administrator</p>
+
+            <div class="profile-info">
+
+                <div>
+                    <strong>2.4K</strong>
+                    <span>Reports</span>
+                </div>
+
+                <div>
+                    <strong>18</strong>
+                    <span>Projects</span>
+                </div>
+
+                <div>
+                    <strong>94%</strong>
+                    <span>Efficiency</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="toast"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+

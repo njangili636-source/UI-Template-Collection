@@ -1,0 +1,1 @@
+function notify(text){const n=document.getElementById('notice');if(n){n.textContent=text;n.style.display='block';setTimeout(()=>n.style.display='none',2500)}}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FixIt - Home Repair Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">🔧 FixIt</div>
+
+        <div class="nav-actions">
+            <button id="savedBtn">📋 Saved</button>
+            <button id="themeBtn">🌙</button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="badge">SMART HOME REPAIR HELPER</span>
+
+                <h1>Something broken at home?</h1>
+
+                <p>
+                    Select a problem and FixIt will give you a simple troubleshooting guide.
+                </p>
+
+                <button class="hero-btn" id="startBtn">
+                Start Fixing →
+            </button>
+
+            </div>
+
+            <div class="hero-icon">
+                🔧
+            </div>
+
+        </section>
+
+
+        <!-- REPAIR SECTION -->
+
+        <section class="repair-section" id="repairSection">
+
+            <div class="section-heading">
+                <span>01</span>
+                <div>
+                    <h2>What's the problem?</h2>
+                    <p>Select the problem you want to troubleshoot.</p>
+                </div>
+            </div>
+
+
+            <div class="problem-grid">
+
+                <button class="problem-card active" data-problem="tap">
+                <span>🚰</span>
+                <h3>Leaking Tap</h3>
+                <p>Water dripping from tap</p>
+            </button>
+
+                <button class="problem-card" data-problem="light">
+                <span>💡</span>
+                <h3>Light Problem</h3>
+                <p>Light is not working</p>
+            </button>
+
+                <button class="problem-card" data-problem="door">
+                <span>🚪</span>
+                <h3>Door Problem</h3>
+                <p>Door is difficult to close</p>
+            </button>
+
+                <button class="problem-card" data-problem="furniture">
+                <span>🪑</span>
+                <h3>Loose Furniture</h3>
+                <p>Chair or table is unstable</p>
+            </button>
+
+                <button class="problem-card" data-problem="vacuum">
+                <span>🧹</span>
+                <h3>Vacuum Problem</h3>
+                <p>Vacuum is not working properly</p>
+            </button>
+
+                <button class="problem-card" data-problem="socket">
+                <span>🔌</span>
+                <h3>Socket Problem</h3>
+                <p>Power socket is not working</p>
+            </button>
+
+            </div>
+
+
+            <!-- DETAILS -->
+
+            <div class="details-card">
+
+                <h2>Tell us more</h2>
+
+                <label>How serious is the problem?</label>
+
+                <select id="severity">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="serious">Serious</option>
+            </select>
+
+
+                <label>What have you already tried?</label>
+
+                <textarea id="attempt" placeholder="Example: I tightened the tap..."></textarea>
+
+
+                <button class="diagnose-btn" id="diagnoseBtn">
+                🔍 Find Solution
+            </button>
+
+            </div>
+
+
+            <!-- RESULT -->
+
+            <section class="result" id="result">
+
+                <div class="result-header">
+
+                    <div>
+                        <span class="result-label">FIXIT RESULT</span>
+                        <h2 id="resultTitle">Solution</h2>
+                        <p id="resultDescription"></p>
+                    </div>
+
+                    <div class="difficulty" id="difficulty">
+                        Easy
+                    </div>
+
+                </div>
+
+
+                <div class="result-grid">
+
+                    <div class="info-box">
+                        <span>🧰</span>
+                        <h3>Tools Needed</h3>
+                        <ul id="toolsList"></ul>
+                    </div>
+
+
+                    <div class="info-box">
+                        <span>⏱️</span>
+                        <h3>Estimated Time</h3>
+                        <p id="timeText"></p>
+                    </div>
+
+
+                    <div class="info-box safety">
+                        <span>⚠️</span>
+                        <h3>Safety Note</h3>
+                        <p id="safetyText"></p>
+                    </div>
+
+                </div>
+
+
+                <div class="steps-box">
+
+                    <h3>🛠️ Step-by-Step Fix</h3>
+
+                    <div id="stepsList"></div>
+
+                </div>
+
+
+                <div class="result-actions">
+
+                    <button id="saveBtn">
+                    💾 Save Guide
+                </button>
+
+                    <button id="newBtn">
+                    🔄 New Problem
+                </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+
+    <!-- SAVED MODAL -->
+
+    <div class="modal" id="savedModal">
+
+        <div class="modal-content">
+
+            <button class="close" id="closeModal">×</button>
+
+            <h2>📋 Saved Guides</h2>
+
+            <div id="savedList"></div>
+
+            <button class="clear-btn" id="clearBtn">
+            Clear Saved Guides
+        </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

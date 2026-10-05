@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriScan - Smart Plant Doctor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            🌱 <span>AgriScan</span>
+        </div>
+
+        <div class="nav-actions">
+            <button id="historyBtn" class="nav-btn">📋 History</button>
+            <button id="themeBtn" class="nav-btn">🌙 Dark</button>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="hero-text">
+                <span class="badge">🌿 SMART PLANT HEALTH</span>
+
+                <h1>
+                    Scan your plant.<br>
+                    <span>Understand its health.</span>
+                </h1>
+
+                <p>
+                    Upload a plant image, select its details and get a quick health analysis with recommended care.
+                </p>
+
+                <div class="stats">
+                    <div>
+                        <strong>5+</strong>
+                        <span>Plant Types</span>
+                    </div>
+
+                    <div>
+                        <strong>10+</strong>
+                        <span>Health Conditions</span>
+                    </div>
+
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Plant Care</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plant-visual">
+                <div class="circle">
+                    🌱
+                </div>
+            </div>
+        </section>
+
+
+        <section class="scanner-section">
+
+            <div class="section-heading">
+                <span>PLANT SCANNER</span>
+                <h2>Check Your Plant</h2>
+                <p>Upload a photo and provide a few details.</p>
+            </div>
+
+            <div class="scanner-card">
+
+                <!-- IMAGE UPLOAD -->
+
+                <div class="upload-box" id="uploadBox">
+
+                    <div id="uploadContent">
+                        <div class="upload-icon">📷</div>
+
+                        <h3>Upload Plant Image</h3>
+
+                        <p>
+                            Select an image from your computer
+                        </p>
+
+                        <label for="plantImage" class="choose-btn">
+                    Choose Image
+                </label>
+
+                        <input type="file" id="plantImage" accept="image/*" hidden>
+
+                        <small>PNG, JPG or JPEG</small>
+                    </div>
+
+                    <!-- PREVIEW -->
+
+                    <div id="previewBox" class="preview-box hidden">
+
+                        <img id="previewImage" src="" alt="Selected Plant">
+
+                        <div class="preview-info">
+                            <strong id="fileName">Plant Image</strong>
+                            <span id="fileSize"></span>
+                        </div>
+
+                        <button id="removeImage" class="remove-btn">
+                    ✕ Remove Image
+                </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FORM -->
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>🌱 Plant Type</label>
+
+                        <select id="plantType">
+                    <option value="">Select Plant</option>
+                    <option value="tomato">🍅 Tomato</option>
+                    <option value="rice">🌾 Rice</option>
+                    <option value="cotton">🌿 Cotton</option>
+                    <option value="chilli">🌶️ Chilli</option>
+                    <option value="potato">🥔 Potato</option>
+                </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>📍 Growing Location</label>
+
+                        <select id="location">
+                    <option value="">Select Location</option>
+                    <option value="field">Open Field</option>
+                    <option value="greenhouse">Greenhouse</option>
+                    <option value="garden">Home Garden</option>
+                    <option value="pot">Pot</option>
+                </select>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>🔍 Visible Symptom</label>
+
+                        <select id="symptom">
+                    <option value="">Select Symptom</option>
+                    <option value="yellow">Yellow Leaves</option>
+                    <option value="spots">Leaf Spots</option>
+                    <option value="dry">Dry / Wilting</option>
+                    <option value="holes">Holes / Insects</option>
+                    <option value="healthy">Looks Healthy</option>
+                </select>
+                    </div>
+
+                </div>
+
+
+                <button id="scanBtn" class="scan-btn">
+            🔍 Scan Plant
+        </button>
+
+                <p class="demo-note">
+                    💡 Demo analysis interface — results are based on selected plant symptoms.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SCANNING -->
+
+        <section id="scanningSection" class="scanning-section hidden">
+
+            <div class="loader"></div>
+
+            <h2>Analyzing Plant...</h2>
+
+            <p id="scanMessage">
+                Reading plant information...
+            </p>
+
+            <div class="progress-container">
+                <div id="progressBar"></div>
+            </div>
+
+            <span id="progressText">0%</span>
+
+        </section>
+
+
+        <!-- RESULT -->
+
+        <section id="resultSection" class="result-section hidden">
+
+            <div class="result-header">
+                <span class="success-badge">✓ SCAN COMPLETE</span>
+
+                <h2>Plant Health Result</h2>
+
+                <p id="resultDescription"></p>
+            </div>
+
+
+            <div class="result-grid">
+
+                <div class="health-card">
+
+                    <div class="health-icon" id="healthIcon">
+                        🌱
+                    </div>
+
+                    <h3 id="healthTitle">Plant Health</h3>
+
+                    <div class="severity" id="severity">
+                        Healthy
+                    </div>
+
+                </div>
+
+
+                <div class="info-card">
+
+                    <h3>🌿 Plant Information</h3>
+
+                    <p>
+                        <strong>Plant:</strong>
+                        <span id="resultPlant"></span>
+                    </p>
+
+                    <p>
+                        <strong>Location:</strong>
+                        <span id="resultLocation"></span>
+                    </p>
+
+                    <p>
+                        <strong>Symptom:</strong>
+                        <span id="resultSymptom"></span>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="care-card">
+
+                <h3>💡 Recommended Care</h3>
+
+                <div id="careList"></div>
+
+            </div>
+
+
+            <div class="result-actions">
+
+                <button id="newScanBtn" class="secondary-btn">
+            🔄 New Scan
+        </button>
+
+                <button id="saveResultBtn" class="primary-btn">
+            💾 Save Result
+        </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- HOW IT WORKS -->
+
+        <section class="how-section">
+
+            <div class="section-heading">
+                <span>SIMPLE PROCESS</span>
+                <h2>How It Works</h2>
+                <p>Follow four simple steps.</p>
+            </div>
+
+
+            <div class="steps">
+
+                <button class="step" data-step="1">
+            <span class="step-number">01</span>
+            <div>
+                <h3>Upload</h3>
+                <p>Select a clear plant image.</p>
+            </div>
+        </button>
+
+
+                <button class="step" data-step="2">
+            <span class="step-number">02</span>
+            <div>
+                <h3>Select Details</h3>
+                <p>Choose plant and symptoms.</p>
+            </div>
+        </button>
+
+
+                <button class="step" data-step="3">
+            <span class="step-number">03</span>
+            <div>
+                <h3>Scan</h3>
+                <p>Start the plant analysis.</p>
+            </div>
+        </button>
+
+
+                <button class="step" data-step="4">
+            <span class="step-number">04</span>
+            <div>
+                <h3>Get Result</h3>
+                <p>View care recommendations.</p>
+            </div>
+        </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <strong>🌱 AgriScan</strong>
+        <p>Smart plant health assistant for farmers and gardeners.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

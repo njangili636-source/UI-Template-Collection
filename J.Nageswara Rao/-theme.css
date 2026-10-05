@@ -1,0 +1,16 @@
+/* KMahesh visual theme: soft canvas, crisp panels, rounded controls, violet action color. */
+:root{--km-bg:#f6f7fb;--km-panel:#fff;--km-line:#e4e6ed;--km-ink:#182033;--km-muted:#6d7485;--km-accent:#6357f5;--km-accent-soft:#efedff}
+body{background-color:var(--km-bg);color:var(--km-ink);font-family:Inter,Arial,"Segoe UI",sans-serif}
+body:not(.dark):not(.dark-mode):not(.nova-dark){background:#f6f7fb;color:#182033}
+button,input,select{font-family:inherit}
+.navbar,.topbar,.nav,.sidebar,.panel,.card,.course-card,.product-card,.widget,.modalbox,.modal-content,.cart-panel,.course,.stat-card,.chart-card{border-color:var(--km-line)}
+.navbar,.topbar,.nav,.sidebar,.panel,.card,.course-card,.product-card,.widget,.modalbox,.modal-content,.cart-panel,.course,.stat-card,.chart-card{box-shadow:0 10px 30px rgba(29,35,58,.07)}
+button.primary,.btn.primary,.nav-btn.active,.menu.active,.open-btn,.primary-button,.search button{background-color:var(--km-accent);border-color:var(--km-accent)}
+button.primary:hover,.btn.primary:hover,.open-btn:hover,.primary-button:hover,.search button:hover{filter:brightness(.94)}
+:where(.dark,.dark-mode,.nova-dark){--km-bg:#10131d;--km-panel:#191e2b;--km-line:#303749;--km-ink:#eef1f8;--km-muted:#aeb6c7;--km-accent:#8b7fff;--km-accent-soft:#28233f}
+body.dark,body.dark-mode,body.nova-dark{background-color:#10131d;color:#eef1f8}
+.dark .navbar,.dark .topbar,.dark .nav,.dark .sidebar,.dark .panel,.dark .card,.dark .course-card,.dark .product-card,.dark .widget,.dark .modalbox,.dark-mode .navbar,.dark-mode .panel,.dark-mode .card,.nova-dark .sidebar,.nova-dark .chat-panel{background-color:#191e2b;color:#eef1f8;border-color:#303749}
+
+.launchbox,.launchcard{background:#fff;border-color:#e4e6ed;border-radius:18px;box-shadow:0 10px 30px rgba(29,35,58,.07)}
+.launchcard img{border-radius:0}
+

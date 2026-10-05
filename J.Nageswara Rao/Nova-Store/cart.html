@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nova Store - Cart</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background: #f7f8fc;
+            color: #171717;
+        }
+        
+        nav {
+            background: white;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 7%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
+        .back {
+            padding: 11px 18px;
+            border: none;
+            border-radius: 10px;
+            background: #635bff;
+            color: white;
+            cursor: pointer;
+        }
+        
+        .container {
+            width: 86%;
+            max-width: 1200px;
+            margin: 45px auto;
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+        }
+        
+        .layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+        
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+        }
+        
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .emoji {
+            width: 75px;
+            height: 75px;
+            background: #f1f2f7;
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+        }
+        
+        .details {
+            flex: 1;
+        }
+        
+        .details h3 {
+            margin-bottom: 8px;
+        }
+        
+        .price {
+            color: #635bff;
+            font-weight: bold;
+        }
+        
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .quantity button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 7px;
+            cursor: pointer;
+            background: #eee;
+            font-size: 18px;
+        }
+        
+        .delete {
+            border: none;
+            padding: 9px 12px;
+            border-radius: 8px;
+            background: #fee2e2;
+            color: #dc2626;
+            cursor: pointer;
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        
+        .total {
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            font-size: 21px;
+            font-weight: bold;
+        }
+        
+        .checkout {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 12px;
+            background: #635bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+        
+        .empty {
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .shop {
+            margin-top: 20px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            background: #171717;
+            color: white;
+            cursor: pointer;
+        }
+        
+        @media(max-width:800px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                width: 92%;
+            }
+            .item {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="../km-theme.css">
+</head>
+
+
+<body>
+
+
+    <nav>
+
+        <div class="logo">
+            ✦ Nova Store
+        </div>
+
+        <button class="back" onclick="goShopping()">
+        ← Continue Shopping
+    </button>
+
+    </nav>
+
+
+    <div class="container">
+
+        <h1>
+            Your Shopping Cart 🛒
+        </h1>
+
+
+        <div id="empty" class="empty" style="display:none;">
+
+            <h2>
+                Your cart is empty
+            </h2>
+
+            <p>
+                Add some products from Nova Store.
+            </p>
+
+            <button class="shop" onclick="goShopping()">
+            Start Shopping
+        </button>
+
+        </div>
+
+
+        <div id="layout" class="layout">
+
+            <div class="box">
+
+                <h2>
+                    Cart Items
+                </h2>
+
+                <div id="items"></div>
+
+            </div>
+
+
+            <div class="box">
+
+                <h2>
+                    Order Summary
+                </h2>
+
+                <div class="summary-row">
+
+                    <span>
+                    Subtotal
+                </span>
+
+                    <span id="subtotal">
+                    ₹0
+                </span>
+
+                </div>
+
+
+                <div class="summary-row">
+
+                    <span>
+                    Delivery
+                </span>
+
+                    <span>
+                    FREE
+                </span>
+
+                </div>
+
+
+                <div class="summary-row total">
+
+                    <span>
+                    Total
+                </span>
+
+                    <span id="total">
+                    ₹0
+                </span>
+
+                </div>
+
+
+                <button class="checkout" onclick="checkout()">
+                Proceed to Checkout
+            </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+        const products = [
+
+            {
+                id: 1,
+                name: "Nova Wireless Headphones",
+                price: 2499,
+                emoji: "🎧"
+            },
+
+            {
+                id: 2,
+                name: "Smart Watch Pro",
+                price: 3999,
+                emoji: "⌚"
+            },
+
+            {
+                id: 3,
+                name: "Ultra Phone X",
+                price: 24999,
+                emoji: "📱"
+            },
+
+            {
+                id: 4,
+                name: "Urban Sneakers",
+                price: 2999,
+                emoji: "👟"
+            },
+
+            {
+                id: 5,
+                name: "Classic Hoodie",
+                price: 1599,
+                emoji: "👕"
+            },
+
+            {
+                id: 6,
+                name: "Minimal Backpack",
+                price: 1899,
+                emoji: "🎒"
+            },
+
+            {
+                id: 7,
+                name: "Smart Desk Lamp",
+                price: 1299,
+                emoji: "💡"
+            },
+
+            {
+                id: 8,
+                name: "Cozy Coffee Set",
+                price: 999,
+                emoji: "☕"
+            },
+
+            {
+                id: 9,
+                name: "Aroma Diffuser",
+                price: 1799,
+                emoji: "🌿"
+            },
+
+            {
+                id: 10,
+                name: "Glow Skin Kit",
+                price: 1499,
+                emoji: "✨"
+            },
+
+            {
+                id: 11,
+                name: "Daily Perfume",
+                price: 2299,
+                emoji: "🌸"
+            },
+
+            {
+                id: 12,
+                name: "Beauty Essentials",
+                price: 1199,
+                emoji: "💄"
+            }
+
+        ];
+
+
+        let cart =
+            JSON.parse(localStorage.getItem("novaCart")) || [];
+
+
+        function renderCart() {
+
+            const items =
+                document.getElementById("items");
+
+            const empty =
+                document.getElementById("empty");
+
+            const layout =
+                document.getElementById("layout");
+
+
+            items.innerHTML = "";
+
+
+            if (cart.length === 0) {
+
+                layout.style.display = "none";
+
+                empty.style.display = "block";
+
+                document.getElementById("subtotal").textContent = "₹0";
+
+                document.getElementById("total").textContent = "₹0";
+
+                return;
+
+            }
+
+
+            layout.style.display = "grid";
+
+            empty.style.display = "none";
+
+
+            let total = 0;
+
+
+            cart.forEach(item => {
+
+                const product =
+                    products.find(
+                        product => product.id === item.id
+                    );
+
+                if (!product) return;
+
+
+                const itemTotal =
+                    product.price * item.quantity;
+
+
+                total += itemTotal;
+
+
+                const div =
+                    document.createElement("div");
+
+                div.className = "item";
+
+
+                div.innerHTML = `
+
+            <div class="emoji">
+                ${product.emoji}
+            </div>
+
+            <div class="details">
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <div class="price">
+                    ₹${product.price.toLocaleString("en-IN")}
+                </div>
+
+                <div class="quantity">
+
+                    <button
+                        onclick="changeQuantity(${product.id}, -1)"
+                    >
+                        −
+                    </button>
+
+                    <strong>
+                        ${item.quantity}
+                    </strong>
+
+                    <button
+                        onclick="changeQuantity(${product.id}, 1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    ₹${itemTotal.toLocaleString("en-IN")}
+                </strong>
+
+                <br><br>
+
+                <button
+                    class="delete"
+                    onclick="removeItem(${product.id})"
+                >
+                    Delete
+                </button>
+
+            </div>
+
+        `;
+
+
+                items.appendChild(div);
+
+            });
+
+
+            document.getElementById("subtotal").textContent =
+                "₹" + total.toLocaleString("en-IN");
+
+
+            document.getElementById("total").textContent =
+                "₹" + total.toLocaleString("en-IN");
+
+
+            localStorage.setItem(
+                "novaCart",
+                JSON.stringify(cart)
+            );
+
+        }
+
+
+        function changeQuantity(id, amount) {
+
+            const item =
+                cart.find(item => item.id === id);
+
+            if (!item) return;
+
+
+            item.quantity += amount;
+
+
+            if (item.quantity <= 0) {
+
+                cart =
+                    cart.filter(item => item.id !== id);
+
+            }
+
+
+            renderCart();
+
+        }
+
+
+        function removeItem(id) {
+
+            cart =
+                cart.filter(item => item.id !== id);
+
+            renderCart();
+
+        }
+
+
+        function goShopping() {
+
+            window.location.href = "index.html";
+
+        }
+
+
+        function checkout() {
+
+            if (cart.length === 0) {
+
+                alert("Your cart is empty!");
+
+                return;
+
+            }
+
+
+            alert("🎉 Order placed successfully!");
+
+
+            cart = [];
+
+
+            localStorage.removeItem("novaCart");
+
+
+            renderCart();
+
+        }
+
+
+        renderCart();
+    </script>
+
+
+</body>
+
+</html>
+

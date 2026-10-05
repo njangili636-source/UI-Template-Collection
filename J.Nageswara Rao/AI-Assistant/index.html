@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova AI — Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../km-theme.css">
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">✦</div>
+                <div>
+                    <h2>Nova AI</h2>
+                    <span>Intelligent Workspace</span>
+                </div>
+            </div>
+
+            <button class="new-chat-btn" id="newChatBtn">
+                <span>＋</span>
+                New conversation
+            </button>
+
+            <div class="history-section">
+                <p class="section-title">RECENT</p>
+
+                <button class="history-item active">
+                    <span>💬</span>
+                    Project ideas
+                </button>
+
+                <button class="history-item">
+                    <span>💡</span>
+                    Study planner
+                </button>
+
+                <button class="history-item">
+                    <span>📊</span>
+                    Data analysis
+                </button>
+
+                <button class="history-item">
+                    <span>🚀</span>
+                    Startup ideas
+                </button>
+            </div>
+
+            <div class="sidebar-bottom">
+                <button class="side-action" id="themeBtn">
+                    <span>◐</span>
+                    <span id="themeText">Dark mode</span>
+                </button>
+
+                <button class="side-action" id="clearBtn">
+                    <span>⌫</span>
+                    Clear conversation
+                </button>
+
+                <div class="user-card">
+                    <div class="avatar">NR</div>
+                    <div>
+                        <strong>Workspace User</strong>
+                        <small>Free workspace</small>
+                    </div>
+                    <span>•••</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <button class="mobile-menu" id="mobileMenu">☰</button>
+
+                <div class="model-info">
+                    <div class="model-dot"></div>
+                    <div>
+                        <strong>Nova Assistant</strong>
+                        <span>Online · Ready to help</span>
+                    </div>
+                </div>
+
+                <div class="top-actions">
+                    <button class="icon-btn" title="Search">⌕</button>
+                    <button class="icon-btn" id="topThemeBtn" title="Theme">◐</button>
+                </div>
+
+            </header>
+
+            <!-- CHAT AREA -->
+            <section class="chat-area" id="chatArea">
+
+                <div class="welcome" id="welcome">
+
+                    <div class="welcome-icon">✦</div>
+
+                    <p class="eyebrow">YOUR INTELLIGENT WORKSPACE</p>
+
+                    <h1>
+                        What can I help you
+                        <span>create?</span>
+                    </h1>
+
+                    <p class="welcome-text">
+                        Ask questions, brainstorm ideas, summarize information, or turn your thoughts into something useful.
+                    </p>
+
+                    <!-- PROMPTS -->
+                    <div class="prompt-grid">
+
+                        <button class="prompt-card" data-prompt="Give me 5 creative project ideas for college students.">
+                            <span class="prompt-icon purple">✦</span>
+                            <div>
+                                <strong>Brainstorm ideas</strong>
+                                <small>Generate creative project concepts</small>
+                            </div>
+                            <span class="arrow">↗</span>
+                        </button>
+
+                        <button class="prompt-card" data-prompt="Create a simple study plan for my upcoming exams.">
+                            <span class="prompt-icon blue">▣</span>
+                            <div>
+                                <strong>Create a study plan</strong>
+                                <small>Organize your learning schedule</small>
+                            </div>
+                            <span class="arrow">↗</span>
+                        </button>
+
+                        <button class="prompt-card" data-prompt="Explain JavaScript DOM manipulation in simple terms.">
+                            <span class="prompt-icon green">◇</span>
+                            <div>
+                                <strong>Explain something</strong>
+                                <small>Learn difficult topics simply</small>
+                            </div>
+                            <span class="arrow">↗</span>
+                        </button>
+
+                        <button class="prompt-card" data-prompt="Give me a professional presentation outline.">
+                            <span class="prompt-icon orange">◈</span>
+                            <div>
+                                <strong>Build something</strong>
+                                <small>Turn an idea into a structure</small>
+                            </div>
+                            <span class="arrow">↗</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- MESSAGES -->
+                <div class="messages" id="messages"></div>
+
+            </section>
+
+            <!-- INPUT AREA -->
+            <footer class="composer-wrapper">
+
+                <div class="composer">
+
+                    <button class="attach-btn" id="attachBtn" title="Attach file">
+                        ＋
+                    </button>
+
+                    <input type="text" id="messageInput" placeholder="Ask Nova anything..." autocomplete="off">
+
+                    <div class="composer-actions">
+                        <button class="mini-btn" title="Voice input">⌁</button>
+                        <button class="send-btn" id="sendBtn" title="Send">➤</button>
+                    </div>
+
+                </div>
+
+                <p class="disclaimer">
+                    Nova can make mistakes. Check important information.
+                </p>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+

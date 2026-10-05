@@ -1,0 +1,6 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FlightDeck</title><link rel="stylesheet" href="style.css"></head>
+<body><header><a href="../index.html">‹ Projects</a><h1>FlightDeck</h1><p>Departures</p></header>
+<main><div class="bar"><input id="q" type="search" placeholder="Search city, airline or flight number" aria-label="Search flights">
+<select id="st" aria-label="Filter by status"><option value="">All statuses</option><option>On time</option><option>Delayed</option><option>Boarding</option><option>Cancelled</option></select></div>
+<table><thead><tr><th>Time</th><th>Flight</th><th>Destination</th><th>Gate</th><th>Status</th></tr></thead><tbody id="rows"></tbody></table><p id="empty" hidden>No flights match. Clear the search or pick another status.</p></main>
+<script src="script.js"></script></body></html>
